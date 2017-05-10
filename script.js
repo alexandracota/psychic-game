@@ -6,9 +6,8 @@ var computerChoice = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l'
 var wins = 0;
 var losses = 0;
 var guessesLeft = 10;
-var lettersGuessed = [];
-var guesses = 10;
-var lettersToGuess = null;
+var guessesSoFar = 0;
+
 
 //When the user presses a key, it will run the following funtion.
 document.onkeyup = function(event) {
@@ -21,20 +20,42 @@ document.onkeyup = function(event) {
 
 	console.log(computerGuess);
 
+	//for loop???
+	for (i = 0; i > guessesLeft.length; i--) {
+		
+		//Add to guessesSoFar score.
+		guessesSoFar++;
+		
+		//Subtract from guessesLeft score.
+		guessesLeft--;
 
 
+	//If user guesses the computer's letter...
 
+	if (userGuess === computerGuess) {
+		wins++;
 
-	// //Update guesses left to the player.
-	// var updateGuessesLeft = function () {
-	// 	var guessesLeft = document.getElementById("guesses-left");
-	// 	document.innerHTML("Guesses left: " + guessesLeft);
-	// }
+		//Grab element by ID and rewrite the paragraph.
+		document.getElementById("wins");
+		document.innerHTML() = "Wins: " + this.wins;
+			
+		}
 
-	// //Update guesses
-	// var updateLettersToGuess = function() {
-	// 	this.lettersToGuess = this.compChoice(Math.floor(Math.random() * this.compChoice.length));
-	// };
+	//If user guesses the incorrect letter...
+	else {
+		losses++;
+		document.getElementById("losses");
+		document.innerHTML() = "Losses: " + this.losses;
+		
+
+	console.log(userWin);
+	}
+
+	//if userGuess
+
+};
+};
+
 
 
 
